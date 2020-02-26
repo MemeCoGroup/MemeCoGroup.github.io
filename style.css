@@ -3,6 +3,10 @@
     --accent2: #b45f06;
     --gradientBackground: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
     --gradientText: white;
+    --lightBackground: #fcf2e8;
+    --sizeButton: 20px;
+    --sizeText: 18px;
+    --sizeBigText: 24px;
 }
 
 * {
@@ -13,19 +17,39 @@ body {
     margin: 0;
 }
 
-header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    font-size: 20px;
-}
-
-section {
+header, section {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 10vw;
     padding-right: 10vw;
+}
+
+header {
+    font-size: var(--sizeButton);
+}
+
+header a {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+header a:hover {
+    color: var(--accent1);
+    text-decoration: none;
+}
+
+header a:first-of-type {
+    margin-inline-start: 0;
+}
+
+header a:last-of-type {
+    margin-inline-end: 0;
+}
+
+header img {
+    height: calc(var(--sizeButton) + 10px);
+    margin-inline-end: 5px;
+    vertical-align: middle;
 }
 
 section.cover {
@@ -35,16 +59,144 @@ section.cover {
 }
 
 section.cover h1 {
-    position: relative;
-    top: 20px;
+    margin-top: 15vh;
     font-size: 8vh;
+}
+
+section.introductory h2 {
+    font-size: var(--sizeText);
+}
+
+section.introductory h2:not(:first-of-type) {
+    margin-top: 30px;
+}
+
+section.accented {
+    background-color: var(--lightBackground);
+}
+
+p, ul, ol {
+    font-size: var(--sizeText);
 }
 
 a {
     color: var(--accent2);
     text-decoration: none;
+    transition: 1s color;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+ul.flex, ol.flex {
+    padding: 0;
+}
+
+ol.demonstrative {
+    list-style: none;
+    counter-reset: demonstrative;
+}
+
+ol.demonstrative li {
+    position: relative;
+    padding-left: 20px;
+    counter-increment: demonstrative;
+}
+
+ol.demonstrative li::before {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    color: var(--accent2);
+    font-weight: bold;
+    font-size: var(--sizeBigText);
+    content: counter(demonstrative) ". ";
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex > * {
+    margin: 20px;
+}
+
+.flex > * img {
+    width: 20vw;
+    height: 100%;
+    object-fit: contain;
+}
+
+.flex.equal > * {
+    flex: 1;
+}
+
+.flex.unaligned {
+    align-items: flex-start;
+}
+
+.start {
+    text-align: start;
+}
+
+.middle {
+    text-align: middle;
+}
+
+.end {
+    text-align: end;
+}
+
+.floatStart {
+    float: left;
+}
+
+[dir="rtl"] .floatStart {
+    float: right;
+}
+
+.floatEnd {
+    float: right;
+}
+
+[dir="rtl"] .floatEnd {
+    float: left;
+}
+
+.desktop {
+    display: unset;
+}
+
+.mobile {
+    display: none;
+}
+
+/* Media queries */
+
+@media (max-width: 700px) {
+    .flex {
+        display: unset;
+    }
+
+    .flex > div img {
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+@media (max-width: 500px) {
+    section.cover h1 {
+        font-size: 6vh;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: unset;
+    }
 }
