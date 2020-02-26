@@ -1,0 +1,50 @@
+:root {
+    --accent1: #f6b26b;
+    --accent2: #b45f06;
+    --gradientBackground: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
+    --gradientText: white;
+}
+
+* {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    font-size: 20px;
+}
+
+section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+section.cover {
+    min-height: 60vh;
+    background: var(--gradientBackground);
+    color: var(--gradientText);
+}
+
+section.cover h1 {
+    position: relative;
+    top: 20px;
+    font-size: 8vh;
+}
+
+a {
+    color: var(--accent2);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
