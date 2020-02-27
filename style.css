@@ -3,10 +3,13 @@
     --accent2: #b45f06;
     --gradientBackground: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
     --gradientText: white;
+    --shadowLight: 0px 0px 30px 0px var(--accent1);
+    --shadowHeavy: 0px 0px 30px 0px var(--accent2);
     --lightBackground: #fcf2e8;
     --sizeButton: 20px;
     --sizeText: 18px;
     --sizeBigText: 24px;
+    --sizeBorderRadius: 10px;
 }
 
 * {
@@ -73,6 +76,26 @@ section.introductory h2:not(:first-of-type) {
 
 section.accented {
     background-color: var(--lightBackground);
+}
+
+div.promotional > div {
+    padding: 10px;
+    box-shadow: var(--shadowLight);
+    border-radius: var(--sizeBorderRadius);
+}
+
+div.promotional > div > h3, div.promotional > div > span, div.promotional > div > strong {
+    display: block;
+    text-align: center;
+}
+
+div.promotional > div > strong {
+    font-size: var(--sizeBigText);
+}
+
+div.promotional > div.pop {
+    background-color: var(--lightBackground);
+    box-shadow: var(--shadowHeavy);
 }
 
 p, ul, ol {
