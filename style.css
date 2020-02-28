@@ -93,7 +93,7 @@ div.promotional > div > strong {
     font-size: var(--sizeBigText);
 }
 
-div.promotional > div.pop {
+div.promotional > div.accented {
     background-color: var(--lightBackground);
     box-shadow: var(--shadowHeavy);
 }
@@ -110,6 +110,25 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+button {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: var(--gradientBackground);
+    color: var(--gradientText);
+    border: none;
+    border-radius: var(--sizeBorderRadius);
+    font-size: var(--sizeButton);
+    box-shadow: var(--shadowLight);
+    flex: 1;
+    cursor: pointer;
+    transition: 1s box-shadow;
+}
+
+button:hover {
+    box-shadow: var(--shadowHeavy);
 }
 
 ul.flex, ol.flex {
@@ -160,6 +179,10 @@ ol.demonstrative li::before {
     align-items: flex-start;
 }
 
+.flex.tight > * {
+    margin: 0;
+}
+
 .start {
     text-align: start;
 }
@@ -199,11 +222,11 @@ ol.demonstrative li::before {
 /* Media queries */
 
 @media (max-width: 700px) {
-    .flex {
+    .flex:not(.forced) {
         display: unset;
     }
 
-    .flex > div img {
+    .flex:not(.forced) > div img {
         width: 60%;
         margin-left: 20%;
         margin-right: 20%;
