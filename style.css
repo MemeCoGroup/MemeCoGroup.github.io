@@ -20,7 +20,7 @@ body {
     margin: 0;
 }
 
-header, section {
+header, section, footer {
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 10vw;
@@ -53,6 +53,36 @@ header img {
     height: calc(var(--sizeButton) + 10px);
     margin-inline-end: 5px;
     vertical-align: middle;
+}
+
+footer {
+    background-color: var(--accent2);
+    color: var(--gradientText);
+}
+
+footer a {
+    display: block;
+    color: var(--gradientText);
+}
+
+footer div.logo {
+    font-size: var(--sizeBigText);
+}
+
+footer div.logo a:hover {
+    text-decoration: none;
+}
+
+footer div.logo a img {
+    height: 50px;
+    margin-inline-end: 10px;
+    vertical-align: middle;
+}
+
+footer strong.header {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 section.cover {
@@ -183,6 +213,11 @@ ol.demonstrative li::before {
     margin: 0;
 }
 
+.flex.stretched {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
 .start {
     text-align: start;
 }
@@ -222,20 +257,23 @@ ol.demonstrative li::before {
 /* Media queries */
 
 @media (max-width: 700px) {
+    section.cover h1 {
+        font-size: 6vh;
+    }
+
     .flex:not(.forced) {
         display: unset;
     }
 
-    .flex:not(.forced) > div img {
+    .flex:not(.forced) > * img {
         width: 60%;
         margin-left: 20%;
         margin-right: 20%;
     }
-}
 
-@media (max-width: 500px) {
-    section.cover h1 {
-        font-size: 6vh;
+    .flex.stretched > * {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .desktop {
