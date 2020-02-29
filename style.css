@@ -5,6 +5,7 @@
     --gradientText: white;
     --shadowLight: 0px 0px 30px 0px var(--accent1);
     --shadowHeavy: 0px 0px 30px 0px var(--accent2);
+    --pageBackground: white;
     --lightBackground: #fcf2e8;
     --sizeButton: 20px;
     --sizeText: 18px;
@@ -18,6 +19,7 @@
 
 body {
     margin: 0;
+    background-color: var(--pageBackground);
 }
 
 header, section, footer {
@@ -126,6 +128,56 @@ div.promotional > div > strong {
 div.promotional > div.accented {
     background-color: var(--lightBackground);
     box-shadow: var(--shadowHeavy);
+}
+
+div.listings {
+    margin: -10px;
+    padding: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+div.listings > div {
+    display: inline-block;
+    width: 25vw;
+    min-width: 250px;
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--pageBackground);
+    box-shadow: var(--shadowLight);
+    border-radius: var(--sizeBorderRadius);
+}
+
+div.listings > div > img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 20px;
+    object-fit: contain;
+    border-radius: var(--sizeBorderRadius);
+}
+
+div.listings div.upvotes, div.listings div.link {
+    display: inline-block;
+    width: 50%;
+}
+
+div.listings div.link {
+    text-align: right;
+}
+
+div.listings div.link a {
+    padding: 5px;
+    background-color: var(--accent2);
+    color: var(--gradientText);
+    border-radius: var(--sizeBorderRadius);
+    transition: 1s background-color;
+}
+
+div.listings div.link a:hover {
+    background-color: var(--accent1);
+    text-decoration: none;
 }
 
 p, ul, ol {
@@ -283,4 +335,10 @@ ol.demonstrative li::before {
     .mobile {
         display: unset;
     }
+}
+
+/* Library overrides */
+
+.material-icons {
+    font-size: inherit!important;
 }
