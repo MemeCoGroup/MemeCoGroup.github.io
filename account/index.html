@@ -28,33 +28,11 @@
             firebase.analytics();
         </script>
         <script src="/script.js"></script>
-        <script src="signin.js"></script>
     </head>
-    <body class="form" data-account="signedOut">
+    <body class="form" data-account="signedIn">
         <main>
-            <div class="middle">
-                <a href="/" target="_blank">
-                    <img src="/media/logo.png" alt="MemeCo logo" class="logo" />
-                </a>
-            </div>
-            <h1 class="middle noMargin">Sign into MemeCo</h1>
-            <p class="middle">
-                Get access to our services with your MemeCo account.
-            </p>
-            <div class="flex forced smallMargin">
-                <input type="email" placeholder="Email" id="email">
-            </div>
-            <div class="flex forced smallMargin">
-                <input type="password" placeholder="Password" id="password">
-            </div>
-            <div class="flex forced equal smallMargin">
-                <button class="bad" onclick="window.history.back();">Cancel</button>
-                <button onclick="signIn();">Sign in</button>
-            </div>
-            <p class="notice" id="error"></p>
-            <p class="middle">
-                Don't have an account yet? <a href="/account/signup.html">Sign up for free!</a>
-            </p>
+            <h1>Hello!</h1>
+            <button onclick="signOut();">Sign out</button>
         </main>
     </body>
 </html>
