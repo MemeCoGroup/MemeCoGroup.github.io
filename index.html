@@ -4,21 +4,42 @@
         <title>MemeCo</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1, minimal-ui">
         <meta name="description" content="Sell your brand through the emerging media format with MemeCo.">
-        <link rel="shortcut icon" href="media/logo.png">
+        <link rel="shortcut icon" href="/media/logo.png">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans|Material+Icons&display=swap">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/style.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-firestore.js"></script>
+        <script>
+            var firebaseConfig = {
+              apiKey: "AIzaSyCce8AUlND_QVmgQ5048MSYARhn2QdafjI",
+              authDomain: "memeco-ads.firebaseapp.com",
+              databaseURL: "https://memeco-ads.firebaseio.com",
+              projectId: "memeco-ads",
+              storageBucket: "memeco-ads.appspot.com",
+              messagingSenderId: "695687593704",
+              appId: "1:695687593704:web:999c2a925f80a132c5535d",
+              measurementId: "G-MWMQFC3NPV"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
+        <script src="/script.js"></script>
     </head>
     <body>
         <main>
             <header>
                 <a href="/">
-                    <img src="media/logo.png" alt="MemeCo logo" />
+                    <img src="/media/logo.png" alt="MemeCo logo" />
                     MemeCo
                 </a>
                 <div class="floatEnd">
                     <a href="/" class="desktop">Memedown</a>
                     <a href="/" class="desktop">All products</a>
-                    <a href="/">Sign in</a>
+                    <a href="/account/signin.html">Sign in</a>
                 </div>
             </header>
             <section class="cover">
@@ -27,7 +48,7 @@
             <section class="introductory accented">
                 <div class="flex">
                     <div>
-                        <img src="media/graphics/ads.svg" alt="Abstract graphic of woman showing an ad on a laptop" />
+                        <img src="/media/graphics/ads.svg" alt="Abstract graphic of woman showing an ad on a laptop" />
                     </div>
                     <div>
                         <h2>Promote your brand through the power of memes</h2>
@@ -42,7 +63,7 @@
                 </div>
                 <div class="flex">
                     <div>
-                        <img src="media/graphics/park.svg" alt="Abstract graphic of two people relaxing at a park" />
+                        <img src="/media/graphics/park.svg" alt="Abstract graphic of two people relaxing at a park" />
                     </div>
                     <div>
                         <h2>Introduce a diverse, young audience to your brand</h2>
@@ -86,7 +107,7 @@
                         </p>
                     </div>
                     <div>
-                        <img src="media/graphics/statistics.svg" alt="Abstract graphic of woman showing a graph" />
+                        <img src="/media/graphics/statistics.svg" alt="Abstract graphic of woman showing a graph" />
                     </div>
                 </div>
             </section>
@@ -99,7 +120,7 @@
                 </p>
                 <div class="listings">
                     <div>
-                        <img src="media/memes/oofbruh.jpg" alt="Two anime girls high-fiving, with one labelled 'People who say &quot;oof&quot;' and the other labled 'People who say &quot;bruh&quot;', with the high-fiving labelled 'Contributing nothing to the conversation'" />
+                        <img src="/media/memes/oofbruh.jpg" alt="Two anime girls high-fiving, with one labelled 'People who say &quot;oof&quot;' and the other labled 'People who say &quot;bruh&quot;', with the high-fiving labelled 'Contributing nothing to the conversation'" />
                         <div class="upvotes">
                             <i class="material-icons" aria-hidden="true">thumb_up</i>
                             <strong aria-label="19.9k upvotes">19.9k</strong>
@@ -109,7 +130,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="media/memes/friends.jpg" alt="Panel 1: a pair of scissors with a boyfriend and girlfriend in the rungs and the best friend in the blade section, with the boyfriend and girlfriend coming together. Panel 2: the same scenario, but with the best friend pushing the blades apart, forcing the boyfriend and girlfriend to break apart" />
+                        <img src="/media/memes/friends.jpg" alt="Panel 1: a pair of scissors with a boyfriend and girlfriend in the rungs and the best friend in the blade section, with the boyfriend and girlfriend coming together. Panel 2: the same scenario, but with the best friend pushing the blades apart, forcing the boyfriend and girlfriend to break apart" />
                         <div class="upvotes">
                             <i class="material-icons" aria-hidden="true">thumb_up</i>
                             <strong aria-label="3.3k upvotes">3.3k</strong>
@@ -119,7 +140,7 @@
                         </div>
                     </div>
                     <div>
-                        <img src="media/memes/peepee.jpg" alt="Caption saying 'When she tries to touch ur PeePee before marriage': DISQUALIFIED" />
+                        <img src="/media/memes/peepee.jpg" alt="Caption saying 'When she tries to touch ur PeePee before marriage': DISQUALIFIED" />
                         <div class="upvotes">
                             <i class="material-icons" aria-hidden="true">thumb_up</i>
                             <strong aria-label="905 upvotes">905</strong>
@@ -178,7 +199,7 @@
         <footer>
             <div class="logo">
                 <a href="/">
-                    <img src="media/logo.png" alt="MemeCo logo" />
+                    <img src="/media/logo.png" alt="MemeCo logo" />
                     MemeCo
                 </a>
             </div>
@@ -198,7 +219,8 @@
                 </div>
                 <div>
                     <strong class="header">Social</strong>
-                    <a href="https://reddit.com/u/M3M3C0" target="_blank">u/M3M3C0</a>
+                    <a href="https://reddit.com/u/M3M3C0" target="_blank">Reddit: u/M3M3C0</a>
+                    <a href="https://reddit.com/u/M3M3C0" target="_blank">Instagram: @memecogroup</a>
                 </div>
                 <div>
                     <strong class="header">Contact us</strong>

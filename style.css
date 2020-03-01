@@ -1,12 +1,14 @@
 :root {
     --accent1: #f6b26b;
     --accent2: #b45f06;
-    --gradientBackground: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
-    --gradientText: white;
-    --shadowLight: 0px 0px 30px 0px var(--accent1);
-    --shadowHeavy: 0px 0px 30px 0px var(--accent2);
     --pageBackground: white;
     --lightBackground: #fcf2e8;
+    --gradientBackground: linear-gradient(135deg, var(--accent1) 0%, var(--accent2) 100%);
+    --gradientText: white;
+    --gradientSubtle: linear-gradient(135deg, var(--pageBackground) 0%, var(--lightBackground) 100%);
+    --gradientSubtleText: black;
+    --shadowLight: 0px 0px 30px 0px var(--accent1);
+    --shadowHeavy: 0px 0px 30px 0px var(--accent2);
     --sizeButton: 20px;
     --sizeText: 18px;
     --sizeBigText: 24px;
@@ -20,6 +22,23 @@
 body {
     margin: 0;
     background-color: var(--pageBackground);
+}
+
+body.form {
+    display: flex;
+    height: 100vh;
+    background-color: var(--lightBackground);
+}
+
+body.form main {
+    width: 35vw;
+    max-height: 80vh;
+    margin: auto auto;
+    padding: 10px;
+    background-color: var(--pageBackground);
+    border-radius: var(--sizeBorderRadius);
+    box-shadow: var(--shadowLight);
+    overflow: auto;
 }
 
 header, section, footer {
@@ -95,7 +114,17 @@ section.cover {
 
 section.cover h1 {
     margin-top: 15vh;
+    margin-bottom: 15vh;
     font-size: 8vh;
+}
+
+section.cover.mini {
+    min-height: unset;
+}
+
+section.cover.mini h1 {
+    margin-top:5vh;
+    margin-bottom:5vh;
 }
 
 section.introductory h2 {
@@ -213,6 +242,41 @@ button:hover {
     box-shadow: var(--shadowHeavy);
 }
 
+button.bad {
+    background: var(--gradientSubtle);
+    color: var(--gradientSubtleText);
+}
+
+input {
+    min-width: 0;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: inherit;
+    color: inherit;
+    border: 2px solid var(--accent1);
+    border-radius: var(--sizeBorderRadius);
+    font-size: var(--sizeButton);
+    flex: 1;
+    transition: 1s box-shadow;
+}
+
+img.logo {
+    height: 50px;
+}
+
+p.notice {
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--accent1);
+    border-radius: var(--sizeBorderRadius);
+    box-shadow: var(--shadowLight);
+}
+
+p.notice:empty {
+    display: none;
+}
+
 ul.flex, ol.flex {
     padding: 0;
 }
@@ -270,6 +334,14 @@ ol.demonstrative li::before {
     margin-right: -20px;
 }
 
+.flex.smallMargin > * {
+    margin: 10px;
+}
+
+.noMargin {
+    margin: 0;
+}
+
 .start {
     text-align: start;
 }
@@ -308,6 +380,12 @@ ol.demonstrative li::before {
 
 /* Media queries */
 
+@media (max-width: 900px) {
+    body.form main {
+        width: 60vw;
+    }
+}
+
 @media (max-width: 700px) {
     section.cover h1 {
         font-size: 6vh;
@@ -334,6 +412,12 @@ ol.demonstrative li::before {
 
     .mobile {
         display: unset;
+    }
+}
+
+@media (max-width: 500px) {
+    body.form main {
+        width: 80vw;
     }
 }
 
